@@ -4,7 +4,14 @@ server:
 spring:
   jpa:
     show-sql: true
-    open-in-view: false
-    hibernate:
-      ddl-auto: create
+    open-in-view: true
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:electronic-store-db
+    username: cft
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2
 
