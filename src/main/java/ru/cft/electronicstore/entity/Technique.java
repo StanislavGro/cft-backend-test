@@ -11,8 +11,6 @@ import java.util.UUID;
 
 @Setter
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
 @MappedSuperclass
 public abstract class Technique {
 
@@ -22,7 +20,7 @@ public abstract class Technique {
     private Long id;
 
     @NonNull
-    private UUID serialNumber;
+    private Long serialNumber;
 
     @NonNull
     private String manufacturer;
@@ -32,6 +30,16 @@ public abstract class Technique {
 
     @NonNull
     private int numberOfUnits;
+
+    public Technique(){
+    }
+
+    public Technique(@NonNull Long serialNumber, @NonNull String manufacturer, @NonNull String price, @NonNull int numberOfUnits) {
+        this.serialNumber = serialNumber;
+        this.manufacturer = manufacturer;
+        this.price = price;
+        this.numberOfUnits = numberOfUnits;
+    }
 }
 
 
