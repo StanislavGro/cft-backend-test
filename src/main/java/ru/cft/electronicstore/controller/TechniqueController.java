@@ -14,21 +14,21 @@ public interface TechniqueController<T extends Technique, TDO extends TechniqueD
 
     @GetMapping(value = "/getAll")
     @ResponseBody
-    ResponseEntity<List<T>> getAllComputers();
+    ResponseEntity<List<T>> getAllTechniques();
 
     @GetMapping(value = "/{id}")
     @ResponseBody
-    ResponseEntity<T> getComputerById(@PathVariable @RequestParam Long id);
+    ResponseEntity<T> getTechniqueById(@PathVariable @RequestParam Long id);
 
     @PostMapping
     @ResponseBody
-    ResponseEntity<HttpStatus> createComputer(@RequestBody T computer);
+    ResponseEntity<HttpStatus> createTechnique(@RequestBody T computer);
 
     @DeleteMapping(value = "/{id}")
     @ResponseBody
-    ResponseEntity<HttpStatus> deleteComputer(@PathVariable @RequestParam Long id);
+    ResponseEntity<HttpStatus> deleteTechnique(@PathVariable @RequestParam Long id);
 
     @PatchMapping(value = "/{id}")
     @ResponseBody
-    ResponseEntity<HttpStatus> updateComputerById(@PathVariable @RequestParam Long id, @RequestBody TDO techniqueDto);
+    ResponseEntity<HttpStatus> updateTechniqueById(@PathVariable @RequestParam Long id, @RequestBody TDO techniqueDto);
 }
