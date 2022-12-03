@@ -9,12 +9,13 @@ import javax.persistence.Entity;
 @Entity
 public class HardDrive extends Technique {
 
+    @NonNull
     private Long volumeInBits;
 
     public HardDrive(){
     }
 
-    public HardDrive(@NonNull Long serialNumber, @NonNull String manufacturer, @NonNull String price, @NonNull int numberOfUnits, Long volumeInBits) {
+    public HardDrive(@NonNull Long serialNumber, @NonNull String manufacturer, @NonNull String price, @NonNull int numberOfUnits, @NonNull Long volumeInBits) {
         super(serialNumber, manufacturer, price, numberOfUnits);
         this.volumeInBits = volumeInBits;
     }

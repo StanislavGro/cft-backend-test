@@ -25,20 +25,20 @@ public class ElectronicStoreApplication {
 	@Bean
 	public CommandLineRunner testStart(ComputerServiceImpl computerService) {
 		return args -> {
-			computerService.create(new Computer(2L, "dvdv", "1000", 25, ComputerFormFactor.DESKTOP));
-			computerService.create(new Computer(3L, "sasi", "777", 7, ComputerFormFactor.MONOBLOCK));
-			computerService.create(new Computer(1L, "ska", "999", 6, ComputerFormFactor.NETTOP));
-			List<Computer> computers = computerService.getAll();
-			for(Computer computer: computers)
-				System.out.println(computer);
-			computerService.delete(2L);
-			List<Computer> computers2 = computerService.getAll();
-			for(Computer computer: computers2)
-				System.out.println(computer);
-			computerService.update(4L, new Computer(4L, "!!!", "MILLIARD", 100, ComputerFormFactor.NETTOP));
-			List<Computer> computers3 = computerService.getAll();
-			for(Computer computer: computers3)
-				System.out.println(computer);
+//			computerService.create(new Computer(2L, "dvdv", "1000", 25, ComputerFormFactor.DESKTOP));
+//			computerService.create(new Computer(3L, "sasi", "777", 7, ComputerFormFactor.MONOBLOCK));
+//			computerService.create(new Computer(1L, "ska", "999", 6, ComputerFormFactor.NETTOP));
+//			List<Computer> computers = computerService.getAll();
+//			for(Computer computer: computers)
+//				System.out.println(computer);
+//			computerService.delete(2L);
+//			List<Computer> computers2 = computerService.getAll();
+//			for(Computer computer: computers2)
+//				System.out.println(computer);
+//			computerService.update(4L, new Computer(4L, "!!!", "MILLIARD", 100, ComputerFormFactor.NETTOP));
+//			List<Computer> computers3 = computerService.getAll();
+//			for(Computer computer: computers3)
+//				System.out.println(computer);
 		};
 	}
 }

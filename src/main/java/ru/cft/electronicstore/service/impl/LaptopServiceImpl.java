@@ -2,6 +2,7 @@ package ru.cft.electronicstore.service.impl;
 
 import org.springframework.stereotype.Service;
 import ru.cft.electronicstore.entity.Laptop;
+import ru.cft.electronicstore.entity.dto.LaptopDto;
 import ru.cft.electronicstore.repository.LaptopRepository;
 import ru.cft.electronicstore.service.TechniqueService;
 
@@ -9,11 +10,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class LaptopServiceImpl implements TechniqueService<Laptop> {
+public class LaptopServiceImpl implements TechniqueService<Laptop, LaptopDto> {
 
     private final LaptopRepository laptopRepository;
 
-    public LaptopServiceImpl(LaptopRepository laptopRepository){
+    public LaptopServiceImpl(LaptopRepository laptopRepository) {
         this.laptopRepository = laptopRepository;
     }
 
@@ -23,7 +24,8 @@ public class LaptopServiceImpl implements TechniqueService<Laptop> {
     }
 
     @Override
-    public void update(Long id, Laptop newLaptop) {
+    public void update(Long id, LaptopDto laptopDto) {
+        Laptop newLaptop = laptopDtoConverter(laptopDto);
         laptopRepository.findById(id)
                 .map(laptop -> {
                     laptop.setManufacturer(newLaptop.getManufacturer());
@@ -51,5 +53,13 @@ public class LaptopServiceImpl implements TechniqueService<Laptop> {
     @Override
     public Optional<Laptop> getById(Long id) {
         return laptopRepository.findById(id);
+    }
+
+    public Laptop laptopDtoConverter(LaptopDto laptopDto){
+        return new Laptop(laptopDto.getSerialNumber(),
+                laptopDto.getManufacturer(),
+                laptopDto.getPrice(),
+                laptopDto.getNumberOfUnits(),
+                laptopDto.getSize());
     }
 }

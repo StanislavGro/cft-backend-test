@@ -9,12 +9,14 @@ import javax.persistence.Entity;
 @Setter
 @Entity
 public class Laptop extends Technique {
+
+    @NonNull
     private LaptopSize size;
 
     public Laptop() {
     }
 
-    public Laptop(@NonNull Long serialNumber, @NonNull String manufacturer, @NonNull String price, @NonNull int numberOfUnits, LaptopSize size) {
+    public Laptop(@NonNull Long serialNumber, @NonNull String manufacturer, @NonNull String price, @NonNull int numberOfUnits, @NonNull LaptopSize size) {
         super(serialNumber, manufacturer, price, numberOfUnits);
         this.size = size;
     }

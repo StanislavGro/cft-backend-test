@@ -10,12 +10,13 @@ import javax.persistence.Entity;
 @Entity
 public class Computer extends Technique {
 
+    @NonNull
     private ComputerFormFactor formFactor;
 
     public Computer() {
     }
 
-    public Computer(@NonNull Long serialNumber, @NonNull String manufacturer, @NonNull String price, @NonNull int numberOfUnits, ComputerFormFactor formFactor) {
+    public Computer(@NonNull Long serialNumber, @NonNull String manufacturer, @NonNull String price, @NonNull int numberOfUnits, @NonNull ComputerFormFactor formFactor) {
         super(serialNumber, manufacturer, price, numberOfUnits);
         this.formFactor = formFactor;
     }

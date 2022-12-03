@@ -2,6 +2,7 @@ package ru.cft.electronicstore.service.impl;
 
 import org.springframework.stereotype.Service;
 import ru.cft.electronicstore.entity.Monitor;
+import ru.cft.electronicstore.entity.dto.MonitorDto;
 import ru.cft.electronicstore.repository.MonitorRepository;
 import ru.cft.electronicstore.service.TechniqueService;
 
@@ -9,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class MonitorServiceImpl implements TechniqueService<Monitor> {
+public class MonitorServiceImpl implements TechniqueService<Monitor, MonitorDto> {
 
     private final MonitorRepository monitorRepository;
 
@@ -23,7 +24,8 @@ public class MonitorServiceImpl implements TechniqueService<Monitor> {
     }
 
     @Override
-    public void update(Long id, Monitor newMonitor) {
+    public void update(Long id, MonitorDto monitorDto) {
+        Monitor newMonitor = monitorDtoConverter(monitorDto);
         monitorRepository.findById(id)
                 .map(monitor -> {
                     monitor.setManufacturer(newMonitor.getManufacturer());
@@ -33,8 +35,8 @@ public class MonitorServiceImpl implements TechniqueService<Monitor> {
                     monitor.setNumberOfUnits(newMonitor.getNumberOfUnits());
                     return monitorRepository.save(monitor);
                 }).orElseGet(() -> {
-                   newMonitor.setId(id);
-                   return monitorRepository.save(newMonitor);
+                    newMonitor.setId(id);
+                    return monitorRepository.save(newMonitor);
                 });
     }
 
@@ -52,4 +54,13 @@ public class MonitorServiceImpl implements TechniqueService<Monitor> {
     public Optional<Monitor> getById(Long id) {
         return monitorRepository.findById(id);
     }
+
+    private Monitor monitorDtoConverter(MonitorDto monitorDto){
+        return new Monitor(monitorDto.getSerialNumber(),
+                monitorDto.getManufacturer(),
+                monitorDto.getPrice(),
+                monitorDto.getNumberOfUnits(),
+                monitorDto.getDiagonal());
+    }
+
 }
