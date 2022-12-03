@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 
 @Getter
 @Setter
-@Builder(setterPrefix = "with")
 @Entity
 public class Laptop extends Technique {
     private LaptopSize size;

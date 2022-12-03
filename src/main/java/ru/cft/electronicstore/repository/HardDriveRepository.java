@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import ru.cft.electronicstore.entity.HardDrive;
 
 @Repository
-public interface HardDriveRepository extends JpaRepository<HardDrive, Long> {
+public interface HardDriveRepository extends TechniqueRepository<HardDrive> {
 }

@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 
 @Getter
 @Setter
-@Builder(setterPrefix = "with")
 @Entity
 public class Monitor extends Technique {
     private Double diagonal;
