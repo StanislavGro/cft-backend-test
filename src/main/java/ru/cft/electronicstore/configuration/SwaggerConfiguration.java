@@ -15,7 +15,7 @@ public class SwaggerConfiguration {
                 .info(
                         new Info()
                                 .title("Electronic Store")
-                                .description("")
+                                .description("Shop selling computers and accessories")
                                 .contact(
                                         new Contact()
                                                 .email("stansialv.skii2000@mail.ru")
