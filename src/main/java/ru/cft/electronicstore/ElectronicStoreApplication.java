@@ -22,9 +22,9 @@ public class ElectronicStoreApplication {
 		SpringApplication.run(ElectronicStoreApplication.class, args);
 	}
 
-	@Bean
-	public CommandLineRunner testStart(ComputerServiceImpl computerService) {
-		return args -> {
+//	@Bean
+//	public CommandLineRunner testStart(ComputerServiceImpl computerService) {
+//		return args -> {
 //			computerService.create(new Computer(2L, "dvdv", "1000", 25, ComputerFormFactor.DESKTOP));
 //			computerService.create(new Computer(3L, "sasi", "777", 7, ComputerFormFactor.MONOBLOCK));
 //			computerService.create(new Computer(1L, "ska", "999", 6, ComputerFormFactor.NETTOP));
@@ -39,6 +39,6 @@ public class ElectronicStoreApplication {
 //			List<Computer> computers3 = computerService.getAll();
 //			for(Computer computer: computers3)
 //				System.out.println(computer);
-		};
-	}
+//		};
+//	}
 }
