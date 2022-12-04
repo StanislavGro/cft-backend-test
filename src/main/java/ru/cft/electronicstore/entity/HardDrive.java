@@ -3,6 +3,7 @@ package ru.cft.electronicstore.entity;
 import lombok.*;
 
 import javax.persistence.Entity;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -15,15 +16,15 @@ public class HardDrive extends Technique {
     public HardDrive(){
     }
 
-    public HardDrive(@NonNull Long serialNumber, @NonNull String manufacturer, @NonNull String price, @NonNull int numberOfUnits, @NonNull Long volumeInBits) {
-        super(serialNumber, manufacturer, price, numberOfUnits);
+    public HardDrive(@NonNull UUID serialNumber, @NonNull String manufacturer, @NonNull String priceInRubles, @NonNull int numberOfUnits, @NonNull Long volumeInBits) {
+        super(serialNumber, manufacturer, priceInRubles, numberOfUnits);
         this.volumeInBits = volumeInBits;
     }
 
     @Override
     public String toString() {
         return "HardDrive: { id = " + getId() +
-                ", price = " + getPrice() +
+                ", priceInRubles = " + this.getPriceInRubles() +
                 ", manufacturer = " + getManufacturer() +
                 ", serial number = " + getSerialNumber() +
                 ", number of units = " + getNumberOfUnits() +

@@ -29,7 +29,7 @@ public class LaptopServiceImpl implements TechniqueService<Laptop, LaptopDto> {
         laptopRepository.findById(id)
                 .map(laptop -> {
                     laptop.setManufacturer(newLaptop.getManufacturer());
-                    laptop.setPrice(newLaptop.getPrice());
+                    laptop.setPriceInRubles(newLaptop.getPriceInRubles());
                     laptop.setSerialNumber(newLaptop.getSerialNumber());
                     laptop.setNumberOfUnits(newLaptop.getNumberOfUnits());
                     laptop.setSize(newLaptop.getSize());
@@ -58,7 +58,7 @@ public class LaptopServiceImpl implements TechniqueService<Laptop, LaptopDto> {
     public Laptop laptopDtoConverter(LaptopDto laptopDto){
         return new Laptop(laptopDto.getSerialNumber(),
                 laptopDto.getManufacturer(),
-                laptopDto.getPrice(),
+                laptopDto.getPriceInRubles(),
                 laptopDto.getNumberOfUnits(),
                 laptopDto.getSize());
     }

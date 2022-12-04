@@ -29,8 +29,8 @@ public class MonitorServiceImpl implements TechniqueService<Monitor, MonitorDto>
         monitorRepository.findById(id)
                 .map(monitor -> {
                     monitor.setManufacturer(newMonitor.getManufacturer());
-                    monitor.setPrice(newMonitor.getPrice());
-                    monitor.setDiagonal(newMonitor.getDiagonal());
+                    monitor.setPriceInRubles(newMonitor.getPriceInRubles());
+                    monitor.setDiagonalInCm(newMonitor.getDiagonalInCm());
                     monitor.setSerialNumber(newMonitor.getSerialNumber());
                     monitor.setNumberOfUnits(newMonitor.getNumberOfUnits());
                     return monitorRepository.save(monitor);
@@ -58,9 +58,9 @@ public class MonitorServiceImpl implements TechniqueService<Monitor, MonitorDto>
     private Monitor monitorDtoConverter(MonitorDto monitorDto){
         return new Monitor(monitorDto.getSerialNumber(),
                 monitorDto.getManufacturer(),
-                monitorDto.getPrice(),
+                monitorDto.getPriceInRubles(),
                 monitorDto.getNumberOfUnits(),
-                monitorDto.getDiagonal());
+                monitorDto.getDiagonalInCm());
     }
 
 }

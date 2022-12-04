@@ -4,6 +4,7 @@ import lombok.*;
 import ru.cft.electronicstore.entity.enums.LaptopSize;
 
 import javax.persistence.Entity;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -16,15 +17,15 @@ public class Laptop extends Technique {
     public Laptop() {
     }
 
-    public Laptop(@NonNull Long serialNumber, @NonNull String manufacturer, @NonNull String price, @NonNull int numberOfUnits, @NonNull LaptopSize size) {
-        super(serialNumber, manufacturer, price, numberOfUnits);
+    public Laptop(@NonNull UUID serialNumber, @NonNull String manufacturer, @NonNull String priceInRubles, @NonNull int numberOfUnits, @NonNull LaptopSize size) {
+        super(serialNumber, manufacturer, priceInRubles, numberOfUnits);
         this.size = size;
     }
 
     @Override
     public String toString() {
         return "Laptop: { id = " + getId() +
-                ", price = " + getPrice() +
+                ", priceInRubles = " + this.getPriceInRubles() +
                 ", manufacturer = " + getManufacturer() +
                 ", serial number = " + getSerialNumber() +
                 ", number of units = " + getNumberOfUnits() +

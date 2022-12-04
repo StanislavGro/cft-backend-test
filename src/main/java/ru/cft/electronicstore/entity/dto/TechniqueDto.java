@@ -4,26 +4,28 @@ import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 public abstract class TechniqueDto {
 
     @NonNull
-    private Long serialNumber;
+    private UUID serialNumber;
 
     @NonNull
     private String manufacturer;
 
     @NonNull
-    private String price;
+    private String priceInRubles;
 
     @NonNull
     private int numberOfUnits;
 
-    public TechniqueDto(Long serialNumber, String manufacturer, String price, int numberOfUnits){
+    public TechniqueDto(UUID serialNumber, String manufacturer, String priceInRubles, int numberOfUnits){
         this.serialNumber = serialNumber;
         this.manufacturer = manufacturer;
-        this.price = price;
+        this.priceInRubles = priceInRubles;
         this.numberOfUnits = numberOfUnits;
     }
 }

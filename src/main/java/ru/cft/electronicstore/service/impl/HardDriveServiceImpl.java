@@ -29,7 +29,7 @@ public class HardDriveServiceImpl implements TechniqueService<HardDrive, HardDri
         hardDriveRepository.findById(id)
                 .map(hardDrive -> {
                     hardDrive.setManufacturer(newHardDrive.getManufacturer());
-                    hardDrive.setPrice(newHardDrive.getPrice());
+                    hardDrive.setPriceInRubles(newHardDrive.getPriceInRubles());
                     hardDrive.setSerialNumber(newHardDrive.getSerialNumber());
                     hardDrive.setNumberOfUnits(hardDrive.getNumberOfUnits());
                     hardDrive.setVolumeInBits(newHardDrive.getVolumeInBits());
@@ -58,7 +58,7 @@ public class HardDriveServiceImpl implements TechniqueService<HardDrive, HardDri
     private HardDrive hardDriveDtoConverter(HardDriveDto hardDriveDto){
         return new HardDrive(hardDriveDto.getSerialNumber(),
                 hardDriveDto.getManufacturer(),
-                hardDriveDto.getPrice(),
+                hardDriveDto.getPriceInRubles(),
                 hardDriveDto.getNumberOfUnits(),
                 hardDriveDto.getVolumeInBits());
     }

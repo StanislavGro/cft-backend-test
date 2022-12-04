@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 public class HardDriveDto extends TechniqueDto{
@@ -12,8 +14,8 @@ public class HardDriveDto extends TechniqueDto{
     @NonNull
     private Long volumeInBits;
 
-    public HardDriveDto(@NonNull Long serialNumber, @NonNull String manufacturer, @NonNull String price, @NonNull int numberOfUnits, @NonNull Long volumeInBits) {
-        super(serialNumber, manufacturer, price, numberOfUnits);
+    public HardDriveDto(@NonNull UUID serialNumber, @NonNull String manufacturer, @NonNull String priceInRubles, @NonNull int numberOfUnits, @NonNull Long volumeInBits) {
+        super(serialNumber, manufacturer, priceInRubles, numberOfUnits);
         this.volumeInBits = volumeInBits;
     }
 }

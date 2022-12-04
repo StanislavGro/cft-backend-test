@@ -20,13 +20,13 @@ public abstract class Technique {
     private Long id;
 
     @NonNull
-    private Long serialNumber;
+    private UUID serialNumber;
 
     @NonNull
     private String manufacturer;
 
     @NonNull
-    private String price;
+    private String priceInRubles;
 
     @NonNull
     private int numberOfUnits;
@@ -34,10 +34,10 @@ public abstract class Technique {
     public Technique(){
     }
 
-    public Technique(@NonNull Long serialNumber, @NonNull String manufacturer, @NonNull String price, @NonNull int numberOfUnits) {
+    public Technique(@NonNull UUID serialNumber, @NonNull String manufacturer, @NonNull String priceInRubles, @NonNull int numberOfUnits) {
         this.serialNumber = serialNumber;
         this.manufacturer = manufacturer;
-        this.price = price;
+        this.priceInRubles = priceInRubles;
         this.numberOfUnits = numberOfUnits;
     }
 }

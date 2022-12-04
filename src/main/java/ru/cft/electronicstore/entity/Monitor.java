@@ -3,6 +3,7 @@ package ru.cft.electronicstore.entity;
 import lombok.*;
 
 import javax.persistence.Entity;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -10,24 +11,24 @@ import javax.persistence.Entity;
 public class Monitor extends Technique {
 
     @NonNull
-    private Double diagonal;
+    private Double diagonalInCm;
 
     public Monitor() {
     }
 
-    public Monitor(@NonNull Long serialNumber, @NonNull String manufacturer, @NonNull String price, @NonNull int numberOfUnits, @NonNull Double diagonal) {
-        super(serialNumber, manufacturer, price, numberOfUnits);
-        this.diagonal = diagonal;
+    public Monitor(@NonNull UUID serialNumber, @NonNull String manufacturer, @NonNull String priceInRubles, @NonNull int numberOfUnits, @NonNull Double diagonalInCm) {
+        super(serialNumber, manufacturer, priceInRubles, numberOfUnits);
+        this.diagonalInCm = diagonalInCm;
     }
 
     @Override
     public String toString() {
         return "Monitor: { id = " + getId() +
-                ", price = " + getPrice() +
+                ", priceInRubles = " + this.getPriceInRubles() +
                 ", manufacturer = " + getManufacturer() +
                 ", serial number = " + getSerialNumber() +
                 ", number of units = " + getNumberOfUnits() +
-                ", diagonal = " + diagonal +
+                ", diagonalInCm = " + diagonalInCm +
                 " }";
     }
 }

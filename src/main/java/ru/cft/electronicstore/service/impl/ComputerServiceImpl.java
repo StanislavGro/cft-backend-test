@@ -28,7 +28,7 @@ public class ComputerServiceImpl implements TechniqueService<Computer, ComputerD
         Computer newComputer = ComputerDtoConverter(computerDto);
         computerRepository.findById(id)
                 .map(computer -> {
-                    computer.setPrice(newComputer.getPrice());
+                    computer.setPriceInRubles(newComputer.getPriceInRubles());
                     computer.setManufacturer(newComputer.getManufacturer());
                     computer.setSerialNumber(newComputer.getSerialNumber());
                     computer.setNumberOfUnits(newComputer.getNumberOfUnits());
@@ -59,7 +59,7 @@ public class ComputerServiceImpl implements TechniqueService<Computer, ComputerD
     private Computer ComputerDtoConverter(ComputerDto computerDto){
         return new Computer(computerDto.getSerialNumber(),
                 computerDto.getManufacturer(),
-                computerDto.getPrice(),
+                computerDto.getPriceInRubles(),
                 computerDto.getNumberOfUnits(),
                 computerDto.getFormFactor());
     }
