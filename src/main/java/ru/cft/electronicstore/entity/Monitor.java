@@ -1,6 +1,8 @@
 package ru.cft.electronicstore.entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import java.util.UUID;

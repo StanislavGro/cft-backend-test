@@ -25,7 +25,6 @@ public class ComputerServiceImpl implements TechniqueService<Computer, ComputerD
     @Override
     public void create(Computer computer) {
         computerRepository.save(computer);
-        log.info("Added computer with id {}", computer.getId());
     }
 
     @Override

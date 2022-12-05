@@ -19,7 +19,7 @@ public class SwaggerConfiguration {
                                 .contact(
                                         new Contact()
                                                 .email("stansialv.skii2000@mail.ru")
-                                                .name("Stanislav Grokhotov [JINT] (ER-48527)")
+                                                .name("Stanislav Grokhotov (ER-48527)")
                                 )
                 );
     }

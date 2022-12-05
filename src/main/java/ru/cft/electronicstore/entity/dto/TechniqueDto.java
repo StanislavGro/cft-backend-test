@@ -22,7 +22,7 @@ public abstract class TechniqueDto {
     @NonNull
     private int numberOfUnits;
 
-    public TechniqueDto(UUID serialNumber, String manufacturer, String priceInRubles, int numberOfUnits){
+    public TechniqueDto(UUID serialNumber, String manufacturer, String priceInRubles, int numberOfUnits) {
         this.serialNumber = serialNumber;
         this.manufacturer = manufacturer;
         this.priceInRubles = priceInRubles;

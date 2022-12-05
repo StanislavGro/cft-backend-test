@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Getter
 @Setter
-public class MonitorDto extends TechniqueDto{
+public class MonitorDto extends TechniqueDto {
 
     @NonNull
     private Double diagonalInCm;

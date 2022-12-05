@@ -1,6 +1,8 @@
 package ru.cft.electronicstore.entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import java.util.UUID;
@@ -13,7 +15,7 @@ public class HardDrive extends Technique {
     @NonNull
     private Long volumeInBits;
 
-    public HardDrive(){
+    public HardDrive() {
     }
 
     public HardDrive(@NonNull UUID serialNumber, @NonNull String manufacturer, @NonNull String priceInRubles, @NonNull int numberOfUnits, @NonNull Long volumeInBits) {

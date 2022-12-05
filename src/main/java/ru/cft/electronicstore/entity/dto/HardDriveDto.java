@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Getter
 @Setter
-public class HardDriveDto extends TechniqueDto{
+public class HardDriveDto extends TechniqueDto {
 
     @NonNull
     private Long volumeInBits;
