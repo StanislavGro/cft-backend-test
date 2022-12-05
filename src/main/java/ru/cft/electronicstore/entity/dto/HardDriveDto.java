@@ -1,6 +1,5 @@
 package ru.cft.electronicstore.entity.dto;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;

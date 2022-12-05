@@ -1,5 +1,5 @@
 CREATE TABLE Computer (
-    id BIGINT PRIMARY KEY,
+    id INT8 PRIMARY KEY,
     serial_number UUID NOT NULL,
     manufacturer VARCHAR NOT NULL,
     price_in_rubles VARCHAR NOT NULL,
@@ -8,7 +8,7 @@ CREATE TABLE Computer (
 );
 
 CREATE TABLE Laptop (
-    id BIGINT PRIMARY KEY,
+    id INT8 PRIMARY KEY,
     serial_number UUID NOT NULL,
     manufacturer VARCHAR NOT NULL,
     price_in_rubles VARCHAR NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE Laptop (
 );
 
 CREATE TABLE Monitor (
-    id BIGINT PRIMARY KEY,
+    id INT8 PRIMARY KEY,
     serial_number UUID NOT NULL,
     manufacturer VARCHAR NOT NULL,
     price_in_rubles VARCHAR NOT NULL,
@@ -26,10 +26,10 @@ CREATE TABLE Monitor (
 );
 
 CREATE TABLE Hard_Drive (
-    id BIGINT PRIMARY KEY,
+    id INT8 PRIMARY KEY,
     serial_number UUID NOT NULL,
     manufacturer VARCHAR NOT NULL,
     price_in_rubles VARCHAR NOT NULL,
     number_of_units INTEGER NOT NULL,
-    volume_in_bits BIGINT NOT NULL
+    volume_in_bits INT8 NOT NULL
 );
