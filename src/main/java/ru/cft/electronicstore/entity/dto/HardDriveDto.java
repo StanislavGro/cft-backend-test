@@ -1,6 +1,5 @@
 package ru.cft.electronicstore.entity.dto;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
@@ -9,7 +8,7 @@ import java.util.UUID;
 
 @Getter
 @Setter
-public class HardDriveDto extends TechniqueDto{
+public class HardDriveDto extends TechniqueDto {
 
     @NonNull
     private Long volumeInBits;

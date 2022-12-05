@@ -55,7 +55,7 @@ public class LaptopServiceImpl implements TechniqueService<Laptop, LaptopDto> {
         return laptopRepository.findById(id);
     }
 
-    public Laptop laptopDtoConverter(LaptopDto laptopDto){
+    public Laptop laptopDtoConverter(LaptopDto laptopDto) {
         return new Laptop(laptopDto.getSerialNumber(),
                 laptopDto.getManufacturer(),
                 laptopDto.getPriceInRubles(),

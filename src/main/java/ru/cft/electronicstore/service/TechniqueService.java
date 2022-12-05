@@ -6,7 +6,7 @@ import ru.cft.electronicstore.entity.dto.TechniqueDto;
 import java.util.List;
 import java.util.Optional;
 
-public interface TechniqueService<T extends Technique, TDO extends TechniqueDto>{
+public interface TechniqueService<T extends Technique, TDO extends TechniqueDto> {
 
     void create(T technique);
 

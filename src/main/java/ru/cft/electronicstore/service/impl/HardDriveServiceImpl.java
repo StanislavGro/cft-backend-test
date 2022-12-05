@@ -55,7 +55,7 @@ public class HardDriveServiceImpl implements TechniqueService<HardDrive, HardDri
         return hardDriveRepository.findById(id);
     }
 
-    private HardDrive hardDriveDtoConverter(HardDriveDto hardDriveDto){
+    private HardDrive hardDriveDtoConverter(HardDriveDto hardDriveDto) {
         return new HardDrive(hardDriveDto.getSerialNumber(),
                 hardDriveDto.getManufacturer(),
                 hardDriveDto.getPriceInRubles(),

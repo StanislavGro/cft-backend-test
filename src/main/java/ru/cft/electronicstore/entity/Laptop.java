@@ -1,6 +1,8 @@
 package ru.cft.electronicstore.entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.Setter;
 import ru.cft.electronicstore.entity.enums.LaptopSize;
 
 import javax.persistence.Entity;

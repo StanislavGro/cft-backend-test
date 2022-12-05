@@ -56,7 +56,7 @@ public class ComputerServiceImpl implements TechniqueService<Computer, ComputerD
         return computerRepository.findById(id);
     }
 
-    private Computer ComputerDtoConverter(ComputerDto computerDto){
+    private Computer ComputerDtoConverter(ComputerDto computerDto) {
         return new Computer(computerDto.getSerialNumber(),
                 computerDto.getManufacturer(),
                 computerDto.getPriceInRubles(),

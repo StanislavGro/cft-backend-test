@@ -1,6 +1,8 @@
 package ru.cft.electronicstore.entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.Setter;
 import ru.cft.electronicstore.entity.enums.ComputerFormFactor;
 
 import javax.persistence.Entity;
@@ -22,7 +24,7 @@ public class Computer extends Technique {
         this.formFactor = formFactor;
     }
 
-    public String toString(){
+    public String toString() {
         return "Computer: { id = " + getId() +
                 ", priceInRubles = " + this.getPriceInRubles() +
                 ", manufacturer = " + getManufacturer() +

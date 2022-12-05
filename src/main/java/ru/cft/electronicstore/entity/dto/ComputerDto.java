@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @Getter
 @Setter
-public class ComputerDto extends TechniqueDto{
+public class ComputerDto extends TechniqueDto {
 
     @NonNull
     private ComputerFormFactor formFactor;

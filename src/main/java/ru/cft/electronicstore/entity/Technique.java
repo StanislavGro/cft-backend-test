@@ -1,6 +1,8 @@
 package ru.cft.electronicstore.entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.GeneratedValue;
@@ -31,7 +33,7 @@ public abstract class Technique {
     @NonNull
     private int numberOfUnits;
 
-    public Technique(){
+    public Technique() {
     }
 
     public Technique(@NonNull UUID serialNumber, @NonNull String manufacturer, @NonNull String priceInRubles, @NonNull int numberOfUnits) {
